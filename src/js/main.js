@@ -69,13 +69,13 @@ What is the largest prime factor of the number 600851475143 ?
 console.log('The largest prime factor of the number 13195 is = ' + largestPrimeFactor(13195));
 
 function largestPrimeFactor(number){
-let primeFactors = [];
-	for(let i = 1; i <= number ; i++){
+	for(let i = number; i >= 0 ; i--){
   	if( isPrimeNumber(i) ){
-    	if( number % i === 0) primeFactors.push(i);
+    	if( number % i === 0){
+        return i;
+      }
     }
   }
-  return primeFactors.pop();
 }
 
 function isPrimeNumber(number){
