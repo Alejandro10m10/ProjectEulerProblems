@@ -31,7 +31,7 @@ function getMultiples(){
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 */
 
-printFibonacciNumbers();
+//printFibonacciNumbers();
 
 function printFibonacciNumbers() {
   let sumEvenValues = 0;
@@ -54,4 +54,34 @@ function evenFibonacciNumbers(number) {
   } else {
     return evenFibonacciNumbers(number - 1) + evenFibonacciNumbers(number - 2);
   }
+}
+
+
+/*
+	Problem 3:
+  - Largest prime factor
+  
+  Description:
+  - The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143 ?
+*/
+console.log('The largest prime factor of the number 13195 is = ' + largestPrimeFactor(13195));
+
+function largestPrimeFactor(number){
+let primeFactors = [];
+	for(let i = 1; i <= number ; i++){
+  	if( isPrimeNumber(i) ){
+    	if( number % i === 0) primeFactors.push(i);
+    }
+  }
+  return primeFactors.pop();
+}
+
+function isPrimeNumber(number){
+	if( number === 0 || number === 1 || number === 4) return false; 
+  for(let x = 2 ; x < number / 2 ; x++){
+  	if(number % x === 0) return false;
+  }
+  return true;
 }
